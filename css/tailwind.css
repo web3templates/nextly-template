@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+  html,
+  body {
+    @apply dark:bg-trueGray-900;
+  }
+}
