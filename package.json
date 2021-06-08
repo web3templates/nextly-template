@@ -22,6 +22,7 @@
   "dependencies": {
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
+    "@tailwindcss/aspect-ratio": "^0.2.1",
     "next": "latest",
     "next-themes": "^0.0.14",
     "react": "^17.0.1",

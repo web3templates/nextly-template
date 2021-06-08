@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between lg:px-0">
+      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
         {/* Logo  */}
         <Disclosure>
           {({ open }) => (
@@ -93,6 +93,7 @@ export default function Navbar() {
               Get Started
             </a>
           </Link>
+
           <ThemeChanger />
         </div>
       </nav>
