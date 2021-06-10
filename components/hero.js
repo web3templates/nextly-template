@@ -59,10 +59,10 @@ export default function Hero() {
       </Container>
       <Container>
         <div className="flex flex-col justify-center">
-          <h3 className="text-xl text-center text-gray-700 dark:text-white">
-            Trusted by <span className="text-indigo-500">2000+</span> customers
+          <h2 className="text-xl text-center text-gray-700 dark:text-white">
+            Trusted by <span className="text-indigo-600">2000+</span> customers
             worldwide
-          </h3>
+          </h2>
 
           <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
             <div className="pt-2 text-gray-400 dark:text-gray-400">

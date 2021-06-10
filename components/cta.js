@@ -9,7 +9,7 @@ export default function Cta() {
           <h4 className="text-2xl font-medium lg:text-3xl">
             Ready to try-out this template?
           </h4>
-          <p className="mt-2 text-indigo-100 lg:text-xl">
+          <p className="mt-2 text-indigo-50 lg:text-xl">
             Don't let your visitors see a poor landing.
           </p>
         </div>
