@@ -46,14 +46,13 @@ export default function Hero() {
           </div>
         </div>
         <div className="flex items-center justify-center w-full lg:w-1/2">
-          <div>
+          <div className="hidden lg:block">
             <Image
               src="/img/hero.png"
               width="600"
               height="600"
               alt="Hero Illustration"
               layout="intrinsic"
-              loading="eager"
             />
           </div>
         </div>
