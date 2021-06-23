@@ -2,6 +2,10 @@ import Image from "next/image";
 import React from "react";
 import Container from "./container";
 
+import userOneImg from "/public/img/user1.jpg";
+import userTwoImg from "/public/img/user2.jpg";
+import userThreeImg from "/public/img/user3.jpg";
+
 export default function Testimonials() {
   return (
     <Container>
@@ -14,7 +18,7 @@ export default function Testimonials() {
             </p>
 
             <Avatar
-              image="/img/user1.jpg"
+              image={userOneImg}
               name="Sarah Steiner"
               title="VP Sales at Google"
             />
@@ -28,7 +32,7 @@ export default function Testimonials() {
             </p>
 
             <Avatar
-              image="/img/user2.jpg"
+              image={userTwoImg}
               name="Dylan Ambrose"
               title="Lead marketer at Netflix"
             />
@@ -42,7 +46,7 @@ export default function Testimonials() {
             </p>
 
             <Avatar
-              image="/img/user3.jpg"
+              image={userThreeImg}
               name="Gabrielle Winn"
               title="Co-founder of Acme Inc"
             />
@@ -63,6 +67,7 @@ function Avatar(props) {
           height="40"
           alt="Avatar"
           layout="responsive"
+          placeholder="blur"
         />
       </div>
       <div>

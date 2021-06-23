@@ -19,6 +19,7 @@ export default function Benefits(props) {
               height="482"
               alt="Benefits"
               layout="intrinsic"
+              placeholder="blur"
             />
           </div>
         </div>
