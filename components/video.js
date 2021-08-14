@@ -5,15 +5,15 @@ export default function Video() {
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <Container>
-      <div className="w-full max-w-4xl mx-auto mb-20 overflow-hidden rounded-2xl ">
+      <div className="w-full max-w-4xl mx-auto overflow-hidden lg:mb-20 rounded-2xl ">
         <div
           onClick={() => setPlayVideo(!playVideo)}
           className="relative bg-indigo-300 cursor-pointer aspect-w-16 aspect-h-9 bg-gradient-to-tr from-purple-400 to-indigo-700">
           {!playVideo && (
-            <button className="absolute inset-auto text-white transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 top-1/2 left-1/2">
+            <button className="absolute inset-auto w-16 h-16 text-white transform -translate-x-1/2 -translate-y-1/2 lg:w-28 lg:h-28 top-1/2 left-1/2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-28 h-28"
+                className="w-16 h-16  lg:w-28 lg:h-28"
                 viewBox="0 0 20 20"
                 fill="currentColor">
                 <path
