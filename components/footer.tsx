@@ -1,6 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
 import Container from "./container";
 
 export default function Footer() {
@@ -15,7 +14,7 @@ export default function Footer() {
   return (
     <div className="relative">
       <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-trueGray-700 lg:grid-cols-5">
+        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-100 dark:border-neutral-700 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div>
               {" "}
@@ -62,7 +61,7 @@ export default function Footer() {
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {navigation.map((item, index) => (
                 <Link key={index} href="/">
-                  <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
+                  <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-neutral-700">
                     {item}
                   </a>
                 </Link>
@@ -73,7 +72,7 @@ export default function Footer() {
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
                 <Link key={index} href="/">
-                  <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
+                  <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-neutral-700">
                     {item}
                   </a>
                 </Link>
@@ -187,7 +186,7 @@ const Backlink = () => {
       href="https://web3templates.com"
       target="_blank"
       rel="noopener"
-      className="absolute flex px-3 py-1 space-x-2 text-sm font-semibold text-gray-900 bg-white border border-gray-300 rounded shadow-sm place-items-center left-5 bottom-5 dark:bg-trueGray-900 dark:border-trueGray-700 dark:text-trueGray-300">
+      className="absolute flex px-3 py-1 space-x-2 text-sm font-semibold text-gray-900 bg-white border border-gray-300 rounded shadow-sm place-items-center left-5 bottom-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-300">
       <svg
         width="20"
         height="20"

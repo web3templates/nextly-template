@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React from "react";
+
 import Container from "./container";
 
-export default function Benefits(props) {
+export default function Benefits(props: { imgPos?: any; data?: any; }) {
   const { data } = props;
 
   return (
@@ -40,7 +41,7 @@ export default function Benefits(props) {
             </div>
 
             <div className="w-full mt-5">
-              {data.bullets.map((item, index) => (
+              {data.bullets.map((item: { title: any; icon: any; desc: any; }, index: any) => (
                 <Benefit key={index} title={item.title} icon={item.icon}>
                   {item.desc}
                 </Benefit>
@@ -53,7 +54,7 @@ export default function Benefits(props) {
   );
 }
 
-function Benefit(props) {
+function Benefit(props: { icon: React.DetailedReactHTMLElement<{ className: string; }, HTMLElement>; title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; children: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }) {
   return (
     <>
       <div className="flex items-start mt-8 space-x-3">

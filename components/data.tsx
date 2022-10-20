@@ -1,10 +1,5 @@
 import {
-  EmojiHappyIcon,
-  ChartSquareBarIcon,
-  CursorClickIcon,
-  DeviceMobileIcon,
-  AdjustmentsIcon,
-  SunIcon,
+    AdjustmentsIcon, ChartSquareBarIcon, CursorClickIcon, DeviceMobileIcon, EmojiHappyIcon, SunIcon
 } from "@heroicons/react/outline";
 
 import benefitOneImg from "../public/img/benefit-one.png";
