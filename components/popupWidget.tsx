@@ -13,6 +13,7 @@ export default function PopupWidget() {
   } = useForm({
     mode: "onTouched",
   });
+
   const [isSuccess, setIsSuccess] = useState(false);
   const [Message, setMessage] = useState("");
 
@@ -165,7 +166,7 @@ export default function PopupWidget() {
                         />
                         {errors.name && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.name.message}
+                            {errors?.name?.message && "This field is required"}
                           </div>
                         )}
                       </div>
@@ -197,7 +198,7 @@ export default function PopupWidget() {
 
                         {errors.email && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.email.message}
+                            {errors.email.message && "This field is required"}
                           </div>
                         )}
                       </div>
@@ -226,7 +227,7 @@ export default function PopupWidget() {
                         ></textarea>
                         {errors.message && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.message.message}
+                            {errors.message.message && "This field is required"}
                           </div>
                         )}
                       </div>
