@@ -11,6 +11,7 @@ import Testimonials from "../components/testimonials";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
+import Pricing from "../components/pricing";
 
 //import dynamic from "next/dynamic";
 
@@ -28,48 +29,47 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Nextly - Free Nextjs & TailwindCSS Landing Page Template</title>
+        <title>Infinit Capital - Worlds leading crypto hedgefund </title>
         <meta
           name="description"
-          content="Nextly is a free landing page template built with next.js & Tailwind CSS"
+          content="Infinit Capital - Worlds leading crypto hedgefund "
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Navbar />
       <Hero />
       <SectionTitle
-        pretitle="Nextly Benefits"
-        title=" Why should you use this landing page">
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+        pretitle="Infinit Capital Benefits"
+        title=" Why you should choose us?">
+        Infinit Capital is asia's first crypto hedge fund,
+        Let us help you to grow your crypto wealth 
+        by providing monthly returns of up to 25%!
       </SectionTitle>
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
+      <Pricing />
       <SectionTitle
         pretitle="Watch a video"
-        title="Learn how to fullfil your needs">
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don't forget to add one. Just like this.
+        title="Find out how we work!">
+        Watch this video below to learn everything about us and
+        how we handle our customers.
       </SectionTitle>
       <Video />
-      <SectionTitle
+      {/* <SectionTitle
         pretitle="Testimonials"
         title="Here's what our customers said">
         Testimonails is a great way to increase the brand trust and awareness.
         Use this section to highlight your popular customers.
       </SectionTitle>
-      <Testimonials />
+      <Testimonials /> */}
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
+        For any further question's, please contact  us.
       </SectionTitle>
       <Faq />
       <Cta />
-      <Footer />
-      <PopupWidget />
+      {/* <Footer />
+      <PopupWidget /> */}
     </>
   );
 }

@@ -35,21 +35,21 @@ export default function Faq() {
 
 const faqdata = [
   {
-    question: "Is this template completely free to use?",
-    answer: "Yes, this template is completely free to use.",
+    question: "Can anyone invest in Infinit Capital?",
+    answer: "yes! Everyone can start investing with pd infinity regardless of your experience. We also lowered the minimum investment as low as we can to 500$ to make it more accessible for as many people as possible. ",
   },
   {
-    question: "Can I use it in a commercial project?",
-    answer: "Yes, this you can.",
+    question: "How are my returns going to be paid out?",
+    answer: "Your returns will be sent out to your wallet of choice on a monthly basis.",
   },
   {
-    question: "What is your refund policy? ",
+    question: "How do I get started with Infinit Capital? ",
     answer:
-      "If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no questions asked.",
+      "All you have to do to start investing with us is inquiring us through our website, our team will take care of the rest! ",
   },
   {
-    question: "Do you offer technical support? ",
+    question: "How will Infinit Capital invest my capital? ",
     answer:
-      "No, we don't offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
+      "We will use your capital to trade the best low risk opportunities within the crypto space.",
   },
 ];

@@ -6,9 +6,9 @@ export default function Navbar() {
   const navigation = [
     "Product",
     "Features",
-    "Pricing",
+    "About us",
     "Company",
-    "Blog",
+    "Contact",
   ];
 
   return (
@@ -21,16 +21,16 @@ export default function Navbar() {
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <Link href="/">
                   <a className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
-                    <span>
+                    {/* <span>
                       <img
-                        src="/img/logo.svg"
+                        src="/img/3.png"
                         alt="N"
-                        width="32"
-                        height="32"
-                        className="w-8"
+                        width="64"
+                        height="64"
+                        className="w-20"   
                       />
-                    </span>
-                    <span>Nextly</span>
+                    </span> */}
+                    <span>Infinit Capital</span>
                   </a>
                 </Link>
 
@@ -67,7 +67,7 @@ export default function Navbar() {
                       </Link>
                     ))}
                     <Link href="/">
-                      <a className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
+                      <a href="https://tally.so/r/mZ9vpv" className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5">
                         Get Started
                       </a>
                     </Link>
@@ -94,13 +94,16 @@ export default function Navbar() {
         </div>
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link href="/">
-            <a className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
+          <Link href="https://tally.so/r/mZ9vpv">
+            <button className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5" href="https://tally.so/r/mZ9vpv"
+                target="_blank"
+                rel="noopener">
               Get Started
-            </a>
+            </button>
+            
           </Link>
 
-          <ThemeChanger />
+          {/* <ThemeChanger /> */}
         </div>
       </nav>
     </div>
