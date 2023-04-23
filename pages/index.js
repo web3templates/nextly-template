@@ -24,7 +24,7 @@ import PopupWidget from "../components/popupWidget";
 
 // const PopupWidget = dynamic(() => import("../components/popupWidget"));
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Head>
@@ -73,3 +73,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

@@ -6,7 +6,7 @@ import userOneImg from "../public/img/user1.jpg";
 import userTwoImg from "../public/img/user2.jpg";
 import userThreeImg from "../public/img/user3.jpg";
 
-export default function Testimonials() {
+const Testimonials  = () => {
   return (
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
@@ -66,7 +66,6 @@ function Avatar(props) {
           width="40"
           height="40"
           alt="Avatar"
-          layout="responsive"
           placeholder="blur"
         />
       </div>
@@ -88,3 +87,5 @@ function Mark(props) {
     </>
   );
 }
+
+export default Testimonials;

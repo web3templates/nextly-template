@@ -1,9 +1,9 @@
 import React from "react";
 import Container from "./container";
 import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/solid";
+import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
-export default function Faq() {
+const Faq = () => {
   return (
     <Container className="!p-0">
       <div className="w-full max-w-2xl p-2 mx-auto rounded-2xl">
@@ -53,3 +53,5 @@ const faqdata = [
       "No, we don't offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
   },
 ];
+
+export default Faq;

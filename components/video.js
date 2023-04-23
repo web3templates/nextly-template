@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Container from "./container";
 
-export default function Video() {
+const Video = () => {
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <Container>
@@ -38,3 +38,5 @@ export default function Video() {
     </Container>
   );
 }
+
+export default Video;

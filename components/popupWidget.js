@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
 
-export default function PopupWidget() {
+const PopupWidget = () => {
   const {
     register,
     handleSubmit,
@@ -328,3 +328,5 @@ export default function PopupWidget() {
     </div>
   );
 }
+
+export default PopupWidget;

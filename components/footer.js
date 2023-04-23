@@ -20,8 +20,7 @@ export default function Footer() {
             <div>
               {" "}
               <Link href="/">
-                <a className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
-                  <span>
+                  <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
                     <img
                       src="/img/logo.svg"
                       alt="N"
@@ -31,7 +30,6 @@ export default function Footer() {
                     />
                   </span>
                   <span>Nextly</span>
-                </a>
               </Link>
             </div>
 
@@ -49,7 +47,6 @@ export default function Footer() {
                 className="relative block w-44">
                 <Image
                   src="/img/vercel.svg"
-                  layout="responsive"
                   alt="Powered by Vercel"
                   width="212"
                   height="44"
@@ -62,9 +59,9 @@ export default function Footer() {
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {navigation.map((item, index) => (
                 <Link key={index} href="/">
-                  <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
+                  <span className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
                     {item}
-                  </a>
+                  </span>
                 </Link>
               ))}
             </div>
@@ -73,9 +70,9 @@ export default function Footer() {
             <div className="flex flex-wrap w-full -mt-2 -ml-3 lg:ml-0">
               {legal.map((item, index) => (
                 <Link key={index} href="/">
-                  <a className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
+                  <span className="w-full px-4 py-2 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-trueGray-700">
                     {item}
-                  </a>
+                  </span>
                 </Link>
               ))}
             </div>
