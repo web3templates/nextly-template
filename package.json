@@ -34,19 +34,9 @@
     "react-hook-form": "^7.43.9"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.10.6",
     "autoprefixer": "^10.4.14",
-    "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-twin": "^1.1.0",
     "eslint-config-prettier": "^8.8.0",
     "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.1",
-    "twin.macro": "^3.3.1"
-  },
-  "babelMacros": {
-    "twin": {
-      "preset": "emotion",
-      "includeClassNames": true
-    }
+    "tailwindcss": "^3.3.1"
   }
 }
