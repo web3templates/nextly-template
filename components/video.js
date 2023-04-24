@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Container from "./container";
 
-export default function Video() {
+const Video = () => {
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <Container>
@@ -29,7 +29,7 @@ export default function Video() {
             <iframe
               src="https://www.youtube-nocookie.com/embed/aOq49euWnIo?controls=0&autoplay=1"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
           )}
@@ -38,3 +38,5 @@ export default function Video() {
     </Container>
   );
 }
+
+export default Video;

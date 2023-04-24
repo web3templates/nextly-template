@@ -2,9 +2,8 @@ import Image from "next/image";
 import React from "react";
 import Container from "./container";
 
-export default function Benefits(props) {
+const Benefits = (props) => {
   const { data } = props;
-
   return (
     <>
       <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
@@ -16,17 +15,18 @@ export default function Benefits(props) {
             <Image
               src={data.image}
               width="521"
-              height="482"
+              height="auto"
               alt="Benefits"
-              layout="intrinsic"
+              className={"object-cover"}
               placeholder="blur"
+              blurDataURL={data.image.src}
             />
           </div>
         </div>
 
         <div
           className={`flex flex-wrap items-center w-full lg:w-1/2 ${
-            props.imgPos === "right" ? "lg:justify-end" : ""
+            data.imgPos === "right" ? "lg:justify-end" : ""
           }`}>
           <div>
             <div className="flex flex-col w-full mt-4">
@@ -51,7 +51,7 @@ export default function Benefits(props) {
       </Container>
     </>
   );
-}
+};
 
 function Benefit(props) {
   return (
@@ -74,3 +74,5 @@ function Benefit(props) {
     </>
   );
 }
+
+export default Benefits;

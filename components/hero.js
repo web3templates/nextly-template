@@ -2,7 +2,7 @@ import Image from "next/image";
 import Container from "./container";
 import heroImg from "../public/img/hero.png";
 
-export default function Hero() {
+const Hero = () => {
   return (
     <>
       <Container className="flex flex-wrap ">
@@ -52,8 +52,8 @@ export default function Hero() {
               src={heroImg}
               width="616"
               height="617"
+              className={"object-cover"}
               alt="Hero Illustration"
-              layout="intrinsic"
               loading="eager"
               placeholder="blur"
             />
@@ -193,3 +193,5 @@ function VerizonLogo() {
     </svg>
   );
 }
+
+export default Hero;

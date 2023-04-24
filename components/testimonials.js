@@ -6,7 +6,7 @@ import userOneImg from "../public/img/user1.jpg";
 import userTwoImg from "../public/img/user2.jpg";
 import userThreeImg from "../public/img/user3.jpg";
 
-export default function Testimonials() {
+const Testimonials  = () => {
   return (
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
@@ -41,7 +41,7 @@ export default function Testimonials() {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              This is an <Mark>awesome</Mark> landing page template I've seen. I
+              This is an <Mark>awesome</Mark> landing page template I&apos;ve seen. I
               would use this for anything.
             </p>
 
@@ -66,7 +66,6 @@ function Avatar(props) {
           width="40"
           height="40"
           alt="Avatar"
-          layout="responsive"
           placeholder="blur"
         />
       </div>
@@ -88,3 +87,5 @@ function Mark(props) {
     </>
   );
 }
+
+export default Testimonials;

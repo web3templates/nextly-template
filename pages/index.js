@@ -12,19 +12,7 @@ import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
 
-//import dynamic from "next/dynamic";
-
-// const Video = dynamic(() => import("../components/video"));
-
-// const Benefits = dynamic(() => import("../components/benefits"));
-// const Footer = dynamic(() => import("../components/footer"));
-// const Testimonials = dynamic(() => import("../components/testimonials"));
-// const Cta = dynamic(() => import("../components/cta"));
-// const Faq = dynamic(() => import("../components/faq"));
-
-// const PopupWidget = dynamic(() => import("../components/popupWidget"));
-
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Head>
@@ -52,7 +40,7 @@ export default function Home() {
         title="Learn how to fullfil your needs">
         This section is to highlight a promo or demo video of your product.
         Analysts says a landing page with video has 3% more conversion rate. So,
-        don't forget to add one. Just like this.
+        don&apos;t forget to add one. Just like this.
       </SectionTitle>
       <Video />
       <SectionTitle
@@ -73,3 +61,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;
