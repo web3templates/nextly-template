@@ -3,13 +3,13 @@ import React from "react";
 import Container from "./container";
 
 const Benefits = (props) => {
-  const data = props.data
+  const { data } = props;
   return (
     <>
       <Container className="flex flex-wrap mb-20 lg:gap-10 lg:flex-nowrap ">
         <div
           className={`flex items-center justify-center w-full lg:w-1/2 ${
-            data.imgPos === "right" ? "lg:order-1" : ""
+            props.imgPos === "right" ? "lg:order-1" : ""
           }`}>
           <div>
             <Image
@@ -51,7 +51,7 @@ const Benefits = (props) => {
       </Container>
     </>
   );
-}
+};
 
 function Benefit(props) {
   return (
