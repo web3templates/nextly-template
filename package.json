@@ -4,7 +4,7 @@
   "description": "Nextly Landing Page Template",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--openssl-legacy-provider --inspect' next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
