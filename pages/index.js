@@ -1,3 +1,4 @@
+import { useTranslation, Trans } from 'next-i18next';
 import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
@@ -11,8 +12,22 @@ import Testimonials from "../components/testimonials";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
+import i18next from 'i18next';
+
+i18next.init({
+  lng: 'en', // if you're using a language detector, do not define the lng option
+  debug: true,
+  resources: {
+    en: {
+      translation: {
+        "test_title": "i18next init WORKING _______________ HEY"
+      }
+    }
+  }
+});
 
 const Home = () => {
+  const { t, i18n } = useTranslation()
   return (
     <>
       <Head>
@@ -25,11 +40,14 @@ const Home = () => {
       </Head>
 
       <Navbar />
+      <h1>
+        {i18next.t('test_title')}
+      </h1>
       <Hero />
       <SectionTitle
         pretitle="Nextly Benefits"
         title=" Why should you use this landing page">
-        Nextly is a free landing page & marketing website template for startups
+        ANIL ERIC Nextly is a free landing page & marketing website template for startups
         and indie projects. Its built with Next.js & TailwindCSS. And its
         completely open-source.
       </SectionTitle>
