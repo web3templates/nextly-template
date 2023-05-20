@@ -1,0 +1,50 @@
+name: Push
+run-name: Push [${{ github.ref_name }}] ${{ github.event.after }}
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "**en.json"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Lokalise CLI
+        run: curl -sfL https://raw.githubusercontent.com/lokalise/lokalise-cli-2-go/master/install.sh | sh
+      - name: Push
+        env:
+          GITHUB_BRANCH_NAME: ${{ github.ref_name }}
+          GITHUB_PREVIOUS_COMMIT: ${{ github.event.after }}
+          GITHUB_CURRENT_COMMIT: ${{ github.event.before }}
+          VAR_GITHUB_PRODUCTION_BRANCH: ${{ vars.PRODUCTION_BRANCH }} 
+          VAR_GITHUB_STAGING_BRANCH: ${{ vars.STAGING_BRANCH }} 
+          VAR_LOKALISE_API_TOKEN: ${{ secrets.API_TOKEN }}
+          VAR_LOKALISE_PROJECT_ID: ${{ vars.PROJECT_ID }}
+          VAR_LOKALISE_PRODUCTION_TAG: ${{ vars.PRODUCTION_TAG }}
+          VAR_LOKALISE_STAGING_TAG: ${{ vars.STAGING_TAG }}
+          ENV_LOKALISE_SOURCE_LANG_ISO: en
+        run: |
+             while read file 
+             do 
+                if [ -f $file ]
+                then
+                  if [[ ${{ env.GITHUB_BRANCH_NAME }} == ${{ env.VAR_GITHUB_PRODUCTION_BRANCH }} ]]
+                  then
+                    ./bin/lokalise2 --token ${{ env.VAR_LOKALISE_API_TOKEN }} --project-id ${{ env.VAR_LOKALISE_PROJECT_ID }} file upload --file="$file" --lang-iso ${{ env.ENV_LOKALISE_SOURCE_LANG_ISO }} --include-path --tags ${{ env.VAR_LOKALISE_PRODUCTION_TAG }} --tag-skipped-keys --use-automations=false --poll-timeout 60s
+                  elif [[ ${{ env.GITHUB_BRANCH_NAME }} == ${{ env.VAR_GITHUB_STAGING_BRANCH }} ]]
+                  then
+                    ./bin/lokalise2 --token ${{ env.VAR_LOKALISE_API_TOKEN }} --project-id ${{ env.VAR_LOKALISE_PROJECT_ID }} file upload --file="${file}" --lang-iso ${{ env.ENV_LOKALISE_SOURCE_LANG_ISO }} --include-path --tags ${{ env.VAR_LOKALISE_STAGING_TAG }} --tag-skipped-keys --use-automations=false --poll-timeout 60s
+                  else
+                    ./bin/lokalise2 --token ${{ env.VAR_LOKALISE_API_TOKEN }} --project-id ${{ env.VAR_LOKALISE_PROJECT_ID }} file upload --file="${file}" --lang-iso ${{ env.ENV_LOKALISE_SOURCE_LANG_ISO }} --replace-modified --include-path --tags ${{ env.GITHUB_BRANCH_NAME }} --tag-inserted-keys --tag-updated-keys --use-automations=true --poll-timeout 60s
+                  fi
+                fi
+             done < <(
+             if [ -z ${{ env.GITHUB_CURRENT_COMMIT }} ]
+             then
+              git ls-files -- '**${{ env.ENV_LOKALISE_SOURCE_LANG_ISO }}.json'
+             else
+              git diff --name-only ${{ env.GITHUB_PREVIOUS_COMMIT }} ${{ env.GITHUB_CURRENT_COMMIT }} -- '**${{ env.ENV_LOKALISE_SOURCE_LANG_ISO }}.json'
+             fi | awk NF)
