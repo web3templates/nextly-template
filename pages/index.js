@@ -35,8 +35,7 @@ i18next
   },
   backend: {
     // for all available options read the backend's repository readme file
-    loadPath: 'locales/{{lng}}/translation.json'
-    // loadPath: `${typeof window === 'undefined'? 'public/locales/{{lng}}/translation.json' : '/locales/{{lng}}/translation.json'}`
+    loadPath: 'locales/{{lng}}.json'
   }
 });
 
