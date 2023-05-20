@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from 'next-i18next';
 import Container from "./container";
 
 const Video = () => {
+  const { t } = useTranslation()
   const [playVideo, setPlayVideo] = useState(false);
   return (
     <Container>
@@ -22,7 +24,7 @@ const Video = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="sr-only">Play Video</span>
+              <span className="sr-only">{t('play-video')}</span>
             </button>
           )}
           {playVideo && (
