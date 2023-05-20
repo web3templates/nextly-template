@@ -2,6 +2,7 @@ import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
+import LocaleSwitcher from "./localeSwitcher";
 
 const Navbar = () => {
   const navigation = [
@@ -92,7 +93,7 @@ const Navbar = () => {
           <Link href="/" className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5">
               Get Started
           </Link>
-
+          <LocaleSwitcher />
           <ThemeChanger />
         </div>
       </nav>
