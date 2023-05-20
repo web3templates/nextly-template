@@ -1,4 +1,8 @@
 import { useTranslation, Trans } from 'next-i18next';
+import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import { Suspense } from 'react';
+
 import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
@@ -14,22 +18,31 @@ import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
 import i18next from 'i18next';
 
-i18next.init({
-  lng: 'en', // if you're using a language detector, do not define the lng option
-  debug: true,
-  resources: {
-    en: {
-      translation: {
-        "test_title": "i18next init WORKING _______________ HEY"
-      }
-    }
+
+i18next
+.use(Backend) 
+.use(LanguageDetector)
+// .use(initReactI18next)
+.init({
+  fallbackLng: 'en', // Use en if detected lng is not available
+  // debug: true,
+  interpolation: {
+    escapeValue: false, // React already does escaping
+  },
+  react: {
+    useSuspense: false,
+  },
+  backend: {
+    // for all available options read the backend's repository readme file
+    loadPath: 'locales/{{lng}}/translation.json'
+    // loadPath: `${typeof window === 'undefined'? 'public/locales/{{lng}}/translation.json' : '/locales/{{lng}}/translation.json'}`
   }
 });
 
 const Home = () => {
   const { t, i18n } = useTranslation()
   return (
-    <>
+    <div suppressHydrationWarning>
       <Head>
         <title>Nextly - Free Nextjs & TailwindCSS Landing Page Template</title>
         <meta
@@ -76,7 +89,7 @@ const Home = () => {
       <Cta />
       <Footer />
       <PopupWidget />
-    </>
+    </div>
   );
 }
 
