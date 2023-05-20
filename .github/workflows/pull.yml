@@ -1,0 +1,58 @@
+name: Pull
+run-name: Pull [${{ github.event_name == 'workflow_dispatch' && github.ref_name || github.event.workflow_run.head_branch }}] ${{ github.event.after }}
+on: 
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Push"]
+    types: completed
+jobs:
+  build:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_BRANCH_NAME: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || github.event.workflow_run.head_branch }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+          fetch-depth: 0
+      - run: git branch
+      - run: env
+      - name: Lokalise CLI
+        run: curl -sfL https://raw.githubusercontent.com/lokalise/lokalise-cli-2-go/master/install.sh | sh
+      - name: Pull
+        env: 
+          VAR_GITHUB_PRODUCTION_BRANCH: ${{ vars.PRODUCTION_BRANCH }}
+          VAR_GITHUB_STAGING_BRANCH: ${{ vars.STAGING_BRANCH }} 
+          VAR_LOKALISE_API_TOKEN: ${{ secrets.API_TOKEN }}
+          VAR_LOKALISE_PROJECT_ID: ${{ vars.PROJECT_ID }}
+          VAR_LOKALISE_TARGET_LANG_ISO: ${{ vars.TARGET_LANG_ISO }}
+          VAR_LOKALISE_PRODUCTION_TAG: ${{ vars.PRODUCTION_TAG }}
+          VAR_LOKALISE_STAGING_TAG: ${{ vars.STAGING_TAG }}
+        run: |
+             if [[ ${{ env.GITHUB_BRANCH_NAME }} == ${{ env.VAR_GITHUB_PRODUCTION_BRANCH }} ]]
+             then
+              ./bin/lokalise2 --token ${{ env.VAR_LOKALISE_API_TOKEN }} --project-id ${{ env.VAR_LOKALISE_PROJECT_ID }} file download --format json  --filter-langs ${{ env.VAR_LOKALISE_TARGET_LANG_ISO }} --original-filenames=true --directory-prefix=/ --include-tags=${{ env.VAR_LOKALISE_PRODUCTION_TAG }} --filter-data=last_reviewed 
+             elif [[ ${{ env.GITHUB_BRANCH_NAME }} == ${{ env.VAR_GITHUB_STAGING_BRANCH }} ]]
+             then
+               ./bin/lokalise2 --token ${{ env.VAR_LOKALISE_API_TOKEN }} --project-id ${{ env.VAR_LOKALISE_PROJECT_ID }} file download --format json  --filter-langs ${{ env.VAR_LOKALISE_TARGET_LANG_ISO }} --original-filenames=true --directory-prefix=/ --include-tags=${{ env.VAR_LOKALISE_STAGING_TAG }}
+             else
+               ./bin/lokalise2 --token ${{ env.VAR_LOKALISE_API_TOKEN }} --project-id ${{ env.VAR_LOKALISE_PROJECT_ID }} file download --format json  --filter-langs ${{ env.VAR_LOKALISE_TARGET_LANG_ISO }} --original-filenames=true --directory-prefix=/ --include-tags=${{ env.VAR_LOKALISE_PRODUCTION_TAG }},${{ env.VAR_LOKALISE_STAGING_TAG }},${{ env.GITHUB_BRANCH_NAME }}            
+             fi
+      - name: Create Pull Request
+        env: 
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_NEW_BRANCH_NAME: ${{ env.GITHUB_BRANCH_NAME }}-Lokalise-${{ github.run_id }}${{ github.run_attempt }}
+        run: |
+             git checkout -b ${{ env.GITHUB_NEW_BRANCH_NAME }}
+             git config --global user.name "${GITHUB_ACTOR}"
+             git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+             git add ./\*.json
+             if [[ -z $(git status --untracked-files=no --porcelain) ]]
+             then
+              echo "No changes"
+             else
+              git commit -m 'Translations update'
+              git push --set-upstream origin ${{ env.GITHUB_NEW_BRANCH_NAME }}
+              gh pr create --base ${{ env.GITHUB_BRANCH_NAME }} --head ${{ env.GITHUB_NEW_BRANCH_NAME }} --title "Lokalise translations update" --body ""
+             fi
