@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Container from "./container";
 import heroImg from "../public/img/hero.png";
+import DropDown from "./dropdown";
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
-              What is Codon Bias?
+              What is <span className="text-4xl font-bold leading-snug tracking-tight text-indigo-600 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">Codon Bias</span>?
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
               When DNA has been transcribed
@@ -25,19 +26,13 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
-              <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300"> 
+              <p className="py-5 text-xl leading-normal text-indigo-600 lg:text-xl xl:text-2xl dark:text-gray-300"> 
                 X-Axis:
               </p>
-              <select className="px-6 py-4 text-lg font-medium text-center text-indigo-600 rounded-md" id="dropdown">
-                <option value="select">-- Select Filter --</option>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
-              </select>
-              <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300"> 
-                Y-Axis: Codon Proportions
-              </p>
+              <DropDown />
+              <p className="py-5 text-xl leading-normal text-indigo-600 lg:text-xl xl:text-2xl dark:text-gray-300"> 
+                Y-Axis: <span className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300"> Codon Proportions</span>
+                </p>
               {/* <a
                 target="_blank"
                 rel="noopener"
