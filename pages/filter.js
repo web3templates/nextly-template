@@ -4,45 +4,22 @@ import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 import Image from "next/image";
 import TempImg from "../public/img/altair_chart.png"
-
 import { useState } from 'react';
 import axios from 'axios'; // Import Axios for making HTTP requests
-
+import * as d3 from "d3"
+// import TSV from "tsv-loader?module!../data/proportions/GCF_000001405.40"
 export default function Filter() {
-  const [genesInput, setGenesInput] = useState('');
 
 
 
+const fetchData = async () => {
+  const { spawn } = require('child_process');
+
+  const pythonScript = spawn('python', ['my_python_script.py']);
   
-  const handleFormSubmit = async (event) => {
-   
-    event.preventDefault();
-    try {
-    const genes = genesInput.split(',').map(gene => gene.trim());
-    const { spawn } = require('child_process');
-    const pythonScript = spawn('python', ["Visualization.py", ...genes]);
-    } catch (error) {
-      const container = document.getElementById("Test");
-      container.innerHTML = `${error}`;
-    }
-    
-  //   try {
-  //     // Make a POST request to the backend to run the Python script
-  //     const response = await fetch('runPythonScript', {
-  //       method: 'POST',
-  //       headers: { 'content-type': 'application/json' },
-  //       body: JSON.stringify(genes),
-  //     });
-  //     console.log('Python script executed successfully!');
-  //   } catch (error) {
-  //     const container = document.getElementById("Test");
-  //     container.innerHTML = `${error}`;
-  //     console.error('Error executing Python script:', error);
-  //   }
-  // };
-  // const handleInputChange = (event) => {
-  //   setGenesInput(event.target.value);
-  };
+  pythonScript.stdout.on('data', (data) => {
+    console.log(data.toString());
+})
 
   return (
     <>
@@ -52,18 +29,9 @@ export default function Filter() {
       <Navbar />
       <div>
         <h1>Gene Filter</h1>
-        <form onSubmit={handleFormSubmit}>
-          <label htmlFor="geneInput">Enter genes (comma-separated):</label>
-          <input
-            type="text"
-            id="geneInput"
-            name="genes"
-            placeholder="Enter genes"
-            value={genesInput}
-            // onChange={handleInputChange}
-          />
+        
           <button type="submit">Run Python Script</button>
-        </form>
+          <button type="button" onClick={fetchData}>Load Data</button>
       <container id="Test"></container>
       </div>
       {/* <Image src={TempImg} /> */}
@@ -71,3 +39,5 @@ export default function Filter() {
     </>
   );
 }
+}
+
