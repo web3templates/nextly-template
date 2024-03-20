@@ -1,0 +1,15 @@
+.dropdown {
+    border: 2px;
+    border-color: black;
+    height: 42px;
+    background-color: red;
+    color: gray;
+    outline: black;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
+    &:focus {
+      box-shadow: none;
+    }
+  }
