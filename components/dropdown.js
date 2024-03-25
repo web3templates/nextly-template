@@ -24,7 +24,7 @@ const Dropdown = () => {
       <select className="px-4 py-3 text-lg font-medium text-center text-gray-500 rounded-md" onChange={handleSecondFilterChange} value={state} disabled={country === ""}>
                 <option value="">-- Select Habitat --</option>
                 {country === "Habitat" && (
-                <><option key="Forest">Forest</option><option key="Ocean">Ocean</option></>
+                <><option key="Forest">Forest</option><option key="Ocean">Ocean</option><option key="Ocean">Savannah</option></>
                 )}
                 {/* {country === "USA" && (
                 <><option key="California">California</option><option key="Texas">Texas</option><option key="New York">New York</option></>
