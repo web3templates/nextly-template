@@ -1,6 +1,11 @@
 import React from "react";
 
-const Container = (props) => {
+interface ContainerProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export function Container(props: Readonly<ContainerProps>) {
   return (
     <div
       className={`container p-8 mx-auto xl:px-0 ${
@@ -11,4 +16,3 @@ const Container = (props) => {
   );
 }
 
-export default Container;

@@ -1,9 +1,10 @@
+"use client";
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 
-const Navbar = () => {
+export const Navbar = () => {
   const navigation = [
     "Product",
     "Features",
@@ -100,4 +101,3 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;

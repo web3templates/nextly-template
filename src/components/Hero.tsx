@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Container from "./container";
-import heroImg from "../public/img/hero.png";
+import { Container } from "@/components/Container";
+import heroImg from "../../public/img/hero.png";
 
-const Hero = () => {
+export const Hero = () => {
   return (
     <>
       <Container className="flex flex-wrap ">
@@ -194,4 +194,3 @@ function VerizonLogo() {
   );
 }
 
-export default Hero;
