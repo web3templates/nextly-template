@@ -117,14 +117,6 @@ export function Footer() {
           <a href="https://web3templates.com/" target="_blank" rel="noopener">
             Web3Templates.
           </a>{" "}
-          updated by{" "}
-          <a
-            href="https://youtube.com/c/codingafterthirty"
-            target="_blank"
-            rel="noopener"
-          >
-            Paul
-          </a>{" "}
           Illustrations from{" "}
           <a href="https://www.glazestock.com/" target="_blank" rel="noopener ">
             Glazestock
