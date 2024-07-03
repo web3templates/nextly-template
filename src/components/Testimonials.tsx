@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Container } from "@/components/Container";
 
-import userOneImg from "../../public/img/user1.jpg";
+import userOneImg from "../../public/img/u.png";
 import userTwoImg from "../../public/img/user2.jpg";
 import userThreeImg from "../../public/img/user3.jpg";
 
