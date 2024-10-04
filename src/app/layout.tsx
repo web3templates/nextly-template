@@ -10,8 +10,10 @@ import { PopupWidget } from "@/components/PopupWidget";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "English with Labelle | Personalized language course",
-  description: "English with Labelle. Personalized language course.",
+  title:
+    "English with Labelle | Helping you to achieve success through knowledge!",
+  description:
+    "English with Labelle. Helping you to achieve success through knowledge!",
   icons: "./favicon.ico",
 };
 
