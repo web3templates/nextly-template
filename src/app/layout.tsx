@@ -1,19 +1,20 @@
+//components
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
+//internal components
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PopupWidget } from "@/components/PopupWidget";
 
+//fonts
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title:
-    "English with Labelle | Helping you to achieve success through knowledge!",
-  description:
-    "English with Labelle. Helping you to achieve success through knowledge!",
+  title: "English with Labelle | Aulas personalizadas e online de inglês",
+  description: "English with Labelle | Aulas personalizadas e online de inglês",
   icons: "./favicon.ico",
 };
 

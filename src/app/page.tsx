@@ -1,4 +1,4 @@
-//components
+//internal components
 import { Hero } from "@/components/Hero";
 import { SectionTitle } from "@/components/SectionTitle";
 import { Benefits } from "@/components/Benefits";
@@ -6,41 +6,54 @@ import { Video } from "@/components/Video";
 import { Testimonials } from "@/components/Testimonials";
 import { Faq } from "@/components/Faq";
 import { Cta } from "@/components/Cta";
-import { benefitOne, benefitTwo } from "@/components/data";
+import { benefitOne, benefitTwo, mission } from "@/components/data";
+import StudentTypeList from "@/components/student-type/student-type-list";
+
+//files
+import dataCourses from "../data-json/dataStudent.json";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <SectionTitle
-        preTitle="Nextly Benefits"
-        title=" Why should you use this landing page"
-      >
-        Nextly is a free landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS. And its
-        completely open-source.
+      <SectionTitle title="Sobre a Teacher">
+        Professora com 6 (seis) anos de experiência, sendo 5 (cinco) desses anos
+        em ensino online. Experiência com ESL (English as Second Language)
+        ensinando crianças, adolescentes e adultos. Também tem experiência com
+        alunos de outros países, como: Japão, Arábia Saudita e Marrocos. Já
+        preparou alunos para alguns exames, como IELTS, TOEFL e EIKEN (exame de
+        proficiência em inglês do Japão). Além das aulas online, trabalhou em
+        escolas de ensino regular e bilíngue, atuando no infantil, fundamental I
+        e II. Antes de trabalhar com ensino, trabalhou por mais de 8 (oito) anos
+        na área de Recursos Humanos e Departamento Pessoal, tendo graduação em
+        Gestão de Recursos Humanos e MBA em Gestão de Pessoas. Atualmente está
+        cursando o último ano do curso de Letras-Inglês.
       </SectionTitle>
+
+      <Benefits imgPos="right" data={mission} />
 
       <Benefits data={benefitOne} />
+
       <Benefits imgPos="right" data={benefitTwo} />
 
-      <SectionTitle
-        preTitle="Watch a video"
-        title="Learn how to fullfil your needs"
-      >
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don&apos;t forget to add one. Just like this.
+      <SectionTitle preTitle="" title="Vantagens de estudar com a LABELLE">
+        <div>
+          <ul>
+            <li>
+              Flexibilidade Geográfica: estude onde quiser, confortável e sem
+              precisar sair de casa
+            </li>
+            <li>Material Didático sem custo adicional</li>
+            <li>
+              Perdeu a aula? Quando avisado previamente, você poderá repô-la
+            </li>
+          </ul>
+        </div>
       </SectionTitle>
 
-      <Video videoId="fZ0D0cnR88E" />
-
-      <SectionTitle
-        preTitle="Testimonials"
-        title="Here's what our customers said"
-      >
-        Testimonials is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
+      <SectionTitle preTitle="" title="HAPPY STUDENTS">
+        Veja alguns depoimentos de nossos alunos satisfeitos com os cursos e
+        resultados.
       </SectionTitle>
 
       <Testimonials />
