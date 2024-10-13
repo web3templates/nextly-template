@@ -22,7 +22,7 @@ export const Testimonials = () => {
             <Avatar image={userOneImg} name="Tamires Voshida" title="" />
           </div>
         </div>
-        <div className="">
+        <div>
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
               I love my classes. The best and the <Mark>funniest moment</Mark>{" "}
@@ -78,7 +78,7 @@ function Avatar(props: Readonly<AvatarProps>) {
   );
 }
 
-function Mark(props: { readonly children: React.ReactNode }) {
+export function Mark(props: { readonly children: React.ReactNode }) {
   return (
     <>
       {" "}

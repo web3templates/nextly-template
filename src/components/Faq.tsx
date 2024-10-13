@@ -1,7 +1,11 @@
 "use client";
 import React from "react";
 import { Container } from "@/components/Container";
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/24/solid";
 
 export const Faq = () => {
@@ -32,25 +36,27 @@ export const Faq = () => {
       </div>
     </Container>
   );
-}
+};
 
 const faqdata = [
   {
-    question: "Is this template completely free to use?",
-    answer: "Yes, this template is completely free to use.",
-  },
-  {
-    question: "Can I use it in a commercial project?",
-    answer: "Yes, this you can.",
-  },
-  {
-    question: "What is your refund policy? ",
+    question: "Como funciona?",
     answer:
-      "If you're unhappy with your purchase for any reason, email us within 90 days and we'll refund you in full, no questions asked.",
+      "Nossos cursos são personalizados, com aulas particulares ao vivo. Adaptamos nossas aulas às suas necessidades e objetivos específicos.",
   },
   {
-    question: "Do you offer technical support? ",
+    question: "Qual é o valor do investimento?",
     answer:
-      "No, we don't offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
+      "Oferecemos opções de preços flexíveis para se adequar ao seu orçamento. Para discutir suas necessidades individuais e preços, agende uma consulta gratuita",
+  },
+  {
+    question: "É necessário já saber o inglês?",
+    answer:
+      "Não. Faremos uma pré-chamada que é essencial para entender seus objetivos de aprendizado. Discutiremos seu nível atual, interesses e agendaremos um horário conveniente para as aulas.",
+  },
+  {
+    question: "O que diferencia nossos curso dos outros? ",
+    answer:
+      "Nossos cursos são únicos devido ao nosso foco em instrução personalizada e uma programação de aprendizado. Priorizamos suas necessidades e objetivos individuais para garantir que você obtenha os melhores resultados possíveis.",
   },
 ];
