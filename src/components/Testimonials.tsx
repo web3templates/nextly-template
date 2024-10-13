@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import { Container } from "@/components/Container";
 
-import userOneImg from "../../public/img/user1.jpg";
-import userTwoImg from "../../public/img/user2.jpg";
-import userThreeImg from "../../public/img/user3.jpg";
+import userOneImg from "../../public/img/tami_voshida.jpg";
+import userTwoImg from "../../public/img/hemelly_gleice.jpg";
+import userThreeImg from "../../public/img/diogo.jpg";
 
 export const Testimonials = () => {
   return (
@@ -13,43 +13,38 @@ export const Testimonials = () => {
         <div className="lg:col-span-2 xl:col-auto">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              Share a real <Mark>testimonial</Mark>
-              that hits some of your benefits from one of your popular customer.
+              Muito atenciosa, cria um <Mark>ambiente confortável</Mark> e
+              seguro para o aprendizado. Adapta as aulas para preferências e
+              características de cada aluno e é sempre aberta a feedbacks. Além
+              de ser uma companhia maravilhosa para papos em inglês.
             </p>
 
-            <Avatar
-              image={userOneImg}
-              name="Sarah Steiner"
-              title="VP Sales at Google"
-            />
+            <Avatar image={userOneImg} name="Tamires Voshida" title="" />
+          </div>
+        </div>
+        <div>
+          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+            <p className="text-2xl leading-normal ">
+              I love my classes. The best and the <Mark>funniest moment</Mark>{" "}
+              of my day!! She`s excellent. I recommend!!
+              <br />
+              <br />
+              Se tu não entendeu o que eu escrevi, deveria fazer aulas com ela
+              :D hehe
+            </p>
+
+            <Avatar image={userTwoImg} name="Dylan Ambrose" title="" />
           </div>
         </div>
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <p className="text-2xl leading-normal ">
-              Make sure you only pick the <Mark>right sentence</Mark>
-              to keep it short and simple.
+              Professora sensacional, método de ensino perfeito, atenciosa com
+              os alunos, <Mark>metodologia de ensino</Mark> que mudou minha
+              experiência no inglês, vcs não vão se arrepender.
             </p>
 
-            <Avatar
-              image={userTwoImg}
-              name="Dylan Ambrose"
-              title="Lead marketer at Netflix"
-            />
-          </div>
-        </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <p className="text-2xl leading-normal ">
-              This is an <Mark>awesome</Mark> landing page template I&apos;ve
-              seen. I would use this for anything.
-            </p>
-
-            <Avatar
-              image={userThreeImg}
-              name="Gabrielle Winn"
-              title="Co-founder of Acme Inc"
-            />
+            <Avatar image={userThreeImg} name="Diogo Ayslan" title="" />
           </div>
         </div>
       </div>
@@ -83,7 +78,7 @@ function Avatar(props: Readonly<AvatarProps>) {
   );
 }
 
-function Mark(props: { readonly children: React.ReactNode }) {
+export function Mark(props: { readonly children: React.ReactNode }) {
   return (
     <>
       {" "}
