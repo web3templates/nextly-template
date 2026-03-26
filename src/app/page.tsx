@@ -13,6 +13,7 @@ export default function Home() {
     <Container>
       <Hero />
       <SectionTitle
+        sectionId="section-one"
         preTitle="Nextly Benefits"
         title=" Why should you use this landing page"
       >
@@ -25,6 +26,7 @@ export default function Home() {
       <Benefits imgPos="right" data={benefitTwo} />
 
       <SectionTitle
+        sectionId="section-two"
         preTitle="Watch a video"
         title="Learn how to fullfil your needs"
       >
@@ -36,6 +38,7 @@ export default function Home() {
       <Video videoId="fZ0D0cnR88E" />
 
       <SectionTitle
+        sectionId="section-three"
         preTitle="Testimonials"
         title="Here's what our customers said"
       >
@@ -45,7 +48,11 @@ export default function Home() {
 
       <Testimonials />
 
-      <SectionTitle preTitle="FAQ" title="Frequently Asked Questions">
+      <SectionTitle
+        sectionId="section-four"
+        preTitle="FAQ"
+        title="Frequently Asked Questions"
+      >
         Answer your customers possible questions here, it will increase the
         conversion rate as well as support or chat requests.
       </SectionTitle>

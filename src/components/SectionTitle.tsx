@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "@/components/Container";
 
 interface SectionTitleProps {
+  sectionId?: string;
   preTitle?: string;
   title?: string;
   align?: "left" | "center";
@@ -11,6 +12,7 @@ interface SectionTitleProps {
 export const SectionTitle = (props: Readonly<SectionTitleProps>) => {
   return (
     <Container
+      idName={`${props.sectionId}`}
       className={`flex w-full flex-col mt-4 ${
         props.align === "left" ? "" : "items-center justify-center text-center"
       }`}>

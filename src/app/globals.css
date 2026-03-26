@@ -11,3 +11,6 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
