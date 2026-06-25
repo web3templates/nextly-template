@@ -1,7 +1,7 @@
 {
-  "name": "nextly-template",
+  "name": "cypher-ridge-portfolio",
   "version": "2.0.0",
-  "description": "Nextly Landing Page Template",
+  "description": "Cypher Ridge Portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",

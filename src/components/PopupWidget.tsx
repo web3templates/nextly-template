@@ -134,12 +134,12 @@ export function PopupWidget() {
                       />
                       <input
                         type="hidden"
-                        value={`${userName} sent a message from Nextly`}
+                        value={`${userName} sent a message from Cypher Ridge`}
                         {...register("subject")}
                       />
                       <input
                         type="hidden"
-                        value="Nextly Template"
+                        value="Cypher Ridge Website"
                         {...register("from_name")}
                       />
                       <input

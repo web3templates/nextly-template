@@ -1,60 +1,59 @@
 import {
-  FaceSmileIcon,
-  ChartBarSquareIcon,
-  CursorArrowRaysIcon,
+  CodeBracketIcon,
   DevicePhoneMobileIcon,
-  AdjustmentsHorizontalIcon,
-  SunIcon,
+  CpuChipIcon,
+  CommandLineIcon,
+  CircleStackIcon,
+  CloudIcon,
 } from "@heroicons/react/24/solid";
 
 import benefitOneImg from "../../public/img/benefit-one.png";
 import benefitTwoImg from "../../public/img/benefit-two.png";
 
 const benefitOne = {
-  title: "Highlight your benefits",
-  desc: "You can use this space to highlight your first benefit or a feature of your product. It can also contain an image or Illustration like in the example along with some bullet points.",
+  title: "Artificial Intelligence & Data",
+  desc: "AI that solves real problems, not just buzzword bingo. We build custom LLMs, chatbots, and AI integrations that scale with your business.",
   image: benefitOneImg,
   bullets: [
     {
-      title: "Understand your customers",
-      desc: "Then explain the first point breifly in one or two lines.",
-      icon: <FaceSmileIcon />,
+      title: "Custom AI Solutions",
+      desc: "Tailored AI models trained on your data to automate and optimize workflows.",
+      icon: <CpuChipIcon />,
     },
     {
-      title: "Improve acquisition",
-      desc: "Here you can add the next benefit point.",
-      icon: <ChartBarSquareIcon />,
+      title: "Data Engineering",
+      desc: "Robust data pipelines to process, analyze, and visualize your core business metrics.",
+      icon: <CircleStackIcon />,
     },
     {
-      title: "Drive customer retention",
-      desc: "This will be your last bullet point in this section.",
-      icon: <CursorArrowRaysIcon />,
+      title: "Cloud Infrastructure",
+      desc: "Scalable cloud architecture designed for high availability and performance.",
+      icon: <CloudIcon />,
     },
   ],
 };
 
 const benefitTwo = {
-  title: "Offer more benefits here",
-  desc: "You can use this same layout with a flip image to highlight your rest of the benefits of your product. It can also contain an image or Illustration as above section along with some bullet points.",
+  title: "Web & Mobile Development",
+  desc: "From napkin sketch to launch-ready product. We design and build applications that look good, feel smooth, and hold up at scale.",
   image: benefitTwoImg,
   bullets: [
     {
-      title: "Mobile Responsive Template",
-      desc: "Nextly is designed as a mobile first responsive template.",
+      title: "Custom Web Apps",
+      desc: "Fast, reliable, and scalable web applications built with modern frameworks.",
+      icon: <CodeBracketIcon />,
+    },
+    {
+      title: "iOS & Android",
+      desc: "Native and cross-platform mobile apps that deliver exceptional user experiences.",
       icon: <DevicePhoneMobileIcon />,
     },
     {
-      title: "Powered by Next.js & TailwindCSS",
-      desc: "This template is powered by latest technologies and tools.",
-      icon: <AdjustmentsHorizontalIcon />,
-    },
-    {
-      title: "Dark & Light Mode",
-      desc: "Nextly comes with a zero-config light & dark mode. ",
-      icon: <SunIcon />,
+      title: "API Development",
+      desc: "Secure, high-performance APIs to connect your services and third-party tools.",
+      icon: <CommandLineIcon />,
     },
   ],
 };
 
-
-export {benefitOne, benefitTwo};
+export { benefitOne, benefitTwo };
